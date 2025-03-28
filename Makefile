@@ -12,12 +12,15 @@ CFLAGS = -I$(INC_DIR) -Wall -Wextra -g
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 
+# Find all header files
+DEPS = $(wildcard $(INC_DIR)/*.h)
+
 all: $(TARGET)
 
 $(TARGET): $(OBJS) | $(BIN_DIR)
 	$(CC) $(OBJS) -o $(TARGET)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(DEPS) | $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ_DIR):
