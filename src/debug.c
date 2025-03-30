@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include "debug.h"
 
 void disassemble_chunk(Chunk *chunk, const char *name)
@@ -59,6 +60,8 @@ int disassemble_instruction(Chunk *chunk, int offset)
         return simple_instruction("OP_DIVIDE", offset);
     case OP_NEGATE:
         return simple_instruction("OP_NEGATE", offset);
+    case OP_BANG:
+        return simple_instruction("OP_BANG", offset);
     case OP_RETURN:
         return simple_instruction("OP_RETURN", offset);
     default:

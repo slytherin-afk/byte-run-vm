@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+
 #include "../include/memory.h"
 #include "chunk.h"
 #include "debug.h"

@@ -77,6 +77,9 @@ static InterpretResult run()
         case OP_NEGATE:
             push(-pop());
             break;
+        case OP_BANG:
+            push(!pop());
+            break;
         case OP_RETURN:
         {
             print_value(pop());
