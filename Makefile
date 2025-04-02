@@ -12,7 +12,6 @@ CFLAGS = -I$(INC_DIR) -Wall -Wextra -g
 SRCS = $(wildcard $(SRC_DIR)/*.c)
 OBJS = $(patsubst $(SRC_DIR)/%.c, $(OBJ_DIR)/%.o, $(SRCS))
 
-# Find all header files
 DEPS = $(wildcard $(INC_DIR)/*.h)
 
 all: $(TARGET)

@@ -35,6 +35,11 @@ Value pop_stack(Stack *stack)
     exit(1);
 }
 
+Value peek_stack(Stack *stack, int distance)
+{
+    return stack->top[-1 - distance];
+}
+
 void free_stack(Stack *stack)
 {
     FREE_ARRAY(Value, stack->values, stack->capacity);
